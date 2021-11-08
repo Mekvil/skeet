@@ -1,0 +1,130 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+loader
+</name>
+</assembly>
+<members>
+<member name="T:loader.My.Resources.Resources">
+<summary>
+  Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+</summary>
+</member>
+<member name="P:loader.My.Resources.Resources.ResourceManager">
+<summary>
+  Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+</summary>
+</member>
+<member name="P:loader.My.Resources.Resources.Culture">
+<summary>
+  Перезаписывает свойство CurrentUICulture текущего потока для всех
+  обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+</summary>
+</member>
+<member name="T:loader.Seal">
+ <summary>
+ Main class for BetterSeal
+ </summary>
+</member>
+<member name="M:loader.Seal.Authenticate(System.String)">
+ <summary>
+ Authentication method to allow the functions of BetterSeal, this must come before all others and only needs to be initated once
+ </summary>
+ <param name="auth">(string) Authentication Token</param>
+ <returns>A <see cref="T:BetterSocks.AuthResponse">AuthResponse</see>/> object</returns>
+</member>
+<member name="M:loader.Seal.Login(System.String,System.String)">
+ <summary>
+ Register method to allow the user to login to the authenticated program
+ </summary>
+ <param name="username">(string) username</param>
+ <param name="password">(string) password</param>
+ <returns>A <see cref="T:BetterSocks.LoginResponse">LoginResponse</see>/> object</returns>
+</member>
+<member name="M:loader.Seal.Register(System.String,System.String,System.String)">
+ <summary>
+ Register method to allow a user to register to the program you authenticated with.
+ </summary>
+ <param name="username">(string) desired username</param>
+ <param name="password">(string) desired password, please make a confirmation for users to avoid invalid passwords.</param>
+ <param name="license">(string) license</param>
+ <returns>A <see cref="T:BetterSocks.RegisterResponse">RegisterResponse</see>/> object</returns>
+</member>
+<member name="M:loader.Seal.MakeRequest(System.String,System.String[],BetterSocks.Handler.MethodType)">
+ <summary>
+ Make a webrequest through our secure network to avoid getting it sniffed.
+ </summary>
+ <param name="url">URL</param>
+ <param name="parameters">Parameters in format like so id=1106</param>
+ <returns>Raw response of request</returns>
+</member>
+<member name="M:loader.Seal.GetVariable(System.String,System.Object)">
+ <summary>
+ The backup value for the variable, you can make it a string or whatever you want, this will only be returned upon failure of retrieving the value.
+ </summary>
+ <param name="name">(string) name of the value</param>
+ <param name="failback">(dynamic) value that you want to spit back upon failure</param>
+ <returns>A <see cref="T:BetterSocks.VarResponse">VarResponse</see>/> object</returns>
+</member>
+<member name="M:loader.Seal.GetUserInfo">
+ <summary>
+ Get the userinfo of the currently logged in user
+ </summary>
+ <returns>A <see cref="F:BetterSocks.Handler.userInfo">UserInfo</see>/> object</returns>
+</member>
+<member name="M:loader.Seal.GetuserVariable(System.Int32,System.String)">
+ <summary>
+ Get a user specific variable
+ </summary>
+ <param name="user">(int) UID of the user get with LoginResponse.uid</param>
+ <param name="varname">(string) name of the variable you're attempting to grab</param>
+ <returns></returns>
+</member>
+<member name="M:loader.Seal.SetUserVariable(System.Int32,System.String,System.String)">
+ <summary>
+ Set a user specific variable
+ </summary>
+ <param name="user">(int) UID of the user get with LoginResponse.uid</param>
+ <param name="name">(string) name of the variable you're attempting to set</param>
+ <param name="value">(string) value of the variable</param>
+ <returns></returns>
+</member>
+<member name="T:loader.SealAdmin">
+ <summary>
+ Admin function class of BetterSeal
+ </summary>
+</member>
+<member name="M:loader.SealAdmin.AuthAdmin(System.String,System.String,System.String)">
+ <summary>
+ Authenticate an admins access. Becareful with your secret, you can revoke access on the panel
+ </summary>
+ <param name="secret">(string) Secret gotten from betterseal.net/dashboard</param>
+ <param name="auth">(string) auth token of your program</param>
+ <param name="random">(string) random string you were given</param>
+ <returns></returns>
+</member>
+<member name="M:loader.SealAdmin.GenerateLicnese(System.Int32,System.Int32)">
+ <summary>
+ Generate a license <see cref="!:AuthenticateAdmin"/>
+ </summary>
+ <param name="time">(int) time in seconds of license</param>
+ <param name="level">(int) level of the license 1-100</param>
+ <returns></returns>
+</member>
+<member name="M:loader.SealAdmin.BanUser(System.Int32)">
+ <summary>
+ Ban a user on your authenticated program by username
+ </summary>
+ <param name="uid">(int) userid</param>
+ <returns></returns>
+</member>
+<member name="M:loader.SealAdmin.UnbanUser(System.Int32)">
+ <summary>
+ Unban a user on your authenticated program by username
+ </summary>
+ <param name="uid">(int) userid</param>
+ <returns></returns>
+</member>
+</members>
+</doc>

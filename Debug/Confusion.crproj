@@ -1,0 +1,8 @@
+<project outputDir="C:\Users\carol\source\repos\GeoIP\GeoIP\bin\Debug\Confused" baseDir="C:\Users\carol\source\repos\GeoIP\GeoIP\bin\Debug" xmlns="http://confuser.codeplex.com">
+  <packer id="compressor" />
+  <module path="Bunifu_UI_v1.5.3.dll" />
+  <module path="GeoIP.exe">
+    <rule pattern="true" preset="aggressive" inherit="false" />
+  </module>
+  <module path="XanderUI.dll" />
+</project>
